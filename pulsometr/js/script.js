@@ -97,4 +97,23 @@ $(document).ready(function(){
       $('.overlay').fadeOut();
     });
 
+    //input mask phone
+    $("#phone").mask("+7(999) 999-99-99");
+    $("#phone_form").mask("+7(999) 999-99-99");
+    $("#phone_buy").mask("+7(999) 999-99-99");
+
+    // Smooth scroll up && down
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 1600) {
+        $('.screen_up').fadeIn();
+      } else {
+        $('.screen_up').fadeOut();
+      }
+    });
+
+    $("a[href^='#main']").click(function(){
+      var _href = $(this).attr("href");
+      $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+      return false;
+    });
 });
